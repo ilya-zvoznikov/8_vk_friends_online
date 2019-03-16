@@ -47,16 +47,6 @@ def get_online_friends(login, password):
 
 
 def output_friends_to_console(friends_online):
-    print('\nFriends online:')
-
-    if not friends_online:
-        exit('No friends online'
-             '\n\nPossible reasons:'
-             '\n\t- all friends offline'
-             '\n\t- login and password are incorrect or empty'
-             '\n\t- Internet connection error'
-             )
-
     fields = ['first_name', 'last_name', ]
 
     for friend in friends_online:
@@ -67,4 +57,15 @@ if __name__ == '__main__':
     login = get_user_login()
     password = get_user_password()
     friends_online = get_online_friends(login, password)
+
+    print('\nFriends online:')
+
+    if not friends_online:
+        exit('No friends online'
+             '\n\nPossible reasons:'
+             '\n\t- all friends offline'
+             '\n\t- login and password are incorrect or empty'
+             '\n\t- Internet connection error'
+             )
+
     output_friends_to_console(friends_online)
