@@ -35,10 +35,8 @@ def get_online_friends(login, password):
     ):
         return None
 
-    friends_dict = api.friends.get(fields='online')
-    friends_online_list = [
-        friend for friend in friends_dict['items'] if friend['online']
-    ]
+    friends_online_ids = api.friends.getOnline()
+    friends_online_list = api.users.get(user_ids=friends_online_ids)
     return friends_online_list
 
 
